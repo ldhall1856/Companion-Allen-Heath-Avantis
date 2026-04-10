@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ldhall1856/Companion-Allen-Heath-Avantis.git"
+    "url": "git+https://github.com/ldhall1856/companion-module-allenheath-avantis-update.git"
   },
   "dependencies": {
     "@companion-module/base": "~1.11.2"
