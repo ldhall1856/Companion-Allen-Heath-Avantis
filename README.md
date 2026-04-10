@@ -1,6 +1,6 @@
-# Companion Module: Allen & Heath Avantis
+# Allen & Heath Avantis module
 
-This module provides control and monitoring for the **Allen & Heath Avantis** mixer in **Bitfocus Companion**.
+Control and monitor an **Allen & Heath Avantis** mixer from **Bitfocus Companion**.
 
 ## Features
 
@@ -54,14 +54,15 @@ This module provides control and monitoring for the **Allen & Heath Avantis** mi
 - MIDI Strips
 - SoftKeys
 
-## Configuration
+## Setup
 
-- **Target IP**: IP address of the Avantis console
-- **MIDI Base Channel**: Must match the setting on the console
+1. Enter the **Target IP** address of your Avantis console.
+2. Enter the **MIDI Base Channel**.
+3. On the Avantis, confirm the MIDI base channel under:
 
-On the Avantis, verify the MIDI base channel under:
+   **Utility → Control → MIDI**
 
-**Utility → Control → MIDI**
+4. Make sure the console and the Companion machine can communicate on the same network.
 
 ## Notes
 
@@ -73,10 +74,40 @@ On the Avantis, verify the MIDI base channel under:
 - Mute state updates can be received from the physical console.
 - The module includes a watchdog and reconnect behavior to help recover if the console goes offline.
 
-## Recommended Testing
+## Current supported workflows
+
+- Control Avantis from Companion
+- Receive mute feedback from Avantis
+- Sync input names from Avantis
+- Refresh names automatically after scene changes
+- Use live input names in action dropdowns
+
+## Known behavior
+
+- If the console powers off unexpectedly, disconnect detection may take a short time depending on network conditions.
+- Name refresh timing is intentionally paced to improve reliability across all inputs.
+
+## Configuration
+
+### Target IP
+The IP address of the Avantis console.
+
+### MIDI Base Channel
+The MIDI base channel configured on the Avantis. This must match the console setting.
+
+## Recommended testing before use
 
 - Confirm connection to the console
 - Test mute from Companion and from the console
 - Test scene recall
 - Test automatic input-name refresh
 - Test disconnect and reconnect behavior
+
+## Module status
+
+This module has been updated to improve:
+- input-name synchronization
+- scene-based name refresh
+- named input dropdowns
+- watchdog connection handling
+- automatic reconnect behavior
